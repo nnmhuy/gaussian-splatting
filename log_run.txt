@@ -1,0 +1,8 @@
+// root at dataset folder
+
+colmap feature_extractor --database_path ./distorted/database.db --image_path ./input --ImageReader.single_camera 1 --SiftExtraction.first_octave 0
+colmap exhaustive_matcher --database_path ./distorted/database.db
+
+colmap sequential_matcher --database_path ./distorted/database.db
+colmap mapper --database_path ./distorted/database.db --image_path ./input --output_path ./distorted/sparse --Mapper.multiple_models 0
+colmap image_undistorter --image_path ./input --input_path ./distorted/sparse/0 --output_path . --output_type COLMAP

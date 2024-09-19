@@ -1,0 +1,8 @@
+Colmap cuda install
+
+https://colmap.github.io/install.html
+
+https://github.com/colmap/colmap/issues/2464
+
+compute_cap=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | tr -d '.')
+cmake .. -GNinja -DCMAKE_CUDA_ARCHITECTURES=${compute_cap}
