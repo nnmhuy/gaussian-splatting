@@ -6,3 +6,7 @@ https://github.com/colmap/colmap/issues/2464
 
 compute_cap=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | tr -d '.')
 cmake .. -GNinja -DCMAKE_CUDA_ARCHITECTURES=${compute_cap}
+
+Fix out of memory
+https://github.com/graphdeco-inria/gaussian-splatting/issues/292
+https://github.com/graphdeco-inria/gaussian-splatting/issues/723

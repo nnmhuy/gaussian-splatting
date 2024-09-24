@@ -31,3 +31,16 @@ for i in *.png; do
 done
 )
 
+
+for i in *.exr;
+  do name=`echo "$i" | cut -d'.' -f1`
+  echo "$name"
+  convert "$i" -set colorspace RGB -colorspace sRGB "${name}.jpg"
+done
+
+
+for i in *.png;
+  do name=`echo "$i" | cut -d'.' -f1`
+  echo "$name"
+  convert "$i" "${name}.jpg"
+done
